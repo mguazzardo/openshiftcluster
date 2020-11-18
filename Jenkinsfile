@@ -35,8 +35,17 @@ stage("Interactive_Input") {
             steps {
                 script {
 
-			def returnValue = input message: 'Ruta Path', parameters: [string(defaultValue: '', description: 'ej: https://githbub.com/mguazzardo/ggal.git', name: 'valor')]
-			echo $valor
+		def userInput = input(
+                            id: 'userInput', message: 'Enter path of test reports:?',
+                            parameters: [
+
+                                    string(defaultValue: 'None',
+                                            description: 'Path of config file',
+                                            name: 'Config')
+					]
+			    inputConfig = userInput.Config?:''
+
+
                 }
             }
         }
