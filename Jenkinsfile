@@ -38,11 +38,11 @@ stage("Interactive_Input") {
 			def USER_INPUT = input(
                     	message: 'Ingrese la ruta?',
                     	parameters: [
-                    		string(defaultValue: 'None',
-                                            description: 'Path of config file',
+                    		string(defaultValue: 'https://github.com/mguazzardo/newphp',
+                                            description: 'Ruta del git',
                                             name: 'Config'),
 			])
-			echo "oc new-build ${USER_INPUT} --name 'prueba'"
+			echo "oc new-build ${USER_INPUT} --name 'prueba'"|sh
                 }
 			
             }
