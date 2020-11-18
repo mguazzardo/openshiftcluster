@@ -43,6 +43,7 @@ stage("Interactive_Input") {
                                             name: 'Config'),
 			])
 			echo "salida es: ${USER_INPUT} "
+			 openshift.newBuild( ${USER_INPUT} , "--name=prueba" )
                 }
 			
             }
