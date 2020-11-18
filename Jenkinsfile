@@ -42,7 +42,7 @@ stage("Interactive_Input") {
                                             description: 'Path of config file',
                                             name: 'Config'),
 			])
-			oc new-build ${USER_INPUT} --name "prueba"
+			oc new-build ${USER_INPUT} 
                 }
             }
         }
