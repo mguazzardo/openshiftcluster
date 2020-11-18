@@ -42,8 +42,9 @@ stage("Interactive_Input") {
                                             description: 'Ruta del git',
                                             name: 'Config'),
 			])
-			salida=$(echo "${USER_INPUT}")
-                }
+		//	salida=$(echo "${USER_INPUT}")
+                    inputConfig = USER_INPUT.Config?:''
+		}
 			
             }
         }
