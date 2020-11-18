@@ -42,7 +42,7 @@ stage("Interactive_Input") {
                                             description: 'Path of config file',
                                             name: 'Config'),
 			])
-			echo "salida es: oc new-build ${USER_INPUT} --name "prueba""
+			echo 'oc new-build ${USER_INPUT} --name "prueba"'
                 }
 			
             }
