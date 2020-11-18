@@ -44,9 +44,9 @@ stage("Interactive_Input") {
 			])
 		//	salida=$(echo "${USER_INPUT}")
                     inputConfig = USER_INPUT
-		   sh '''
-		   "oc new-build $inputConfig --name 'prueba'"
-                      '''
+		     openshift.newBuild( inputConfig , "--name=ruby" ) 
+		   
+                      
 		}
 			
             }
