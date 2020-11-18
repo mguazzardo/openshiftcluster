@@ -44,7 +44,9 @@ stage("Interactive_Input") {
 			])
 		//	salida=$(echo "${USER_INPUT}")
                     inputConfig = USER_INPUT
-		     openshift.newBuild( inputConfig , "--name=ruby" ) 
+		        openshift.withCluster() {
+				openshift.newBuild( inputConfig , "--name=ruby" ) 
+				}
 		   
                       
 		}
