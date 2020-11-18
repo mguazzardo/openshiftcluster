@@ -42,8 +42,9 @@ stage("Interactive_Input") {
                                             description: 'Path of config file',
                                             name: 'Config'),
 			])
-			echo "salida es: ${USER_INPUT} "
-			 openshift.newBuild( ${USER_INPUT} , "--name=prueba" )
+			echo "salida es: ${USER_INPUT}"
+			def build = ${USER_INPUT}
+			echo "el build es: $build"
                 }
 			
             }
