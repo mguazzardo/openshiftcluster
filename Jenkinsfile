@@ -35,16 +35,13 @@ stage("Interactive_Input") {
             steps {
                 script {
 		def inputConfig
-		def userInput = input(
-                            id: 'userInput', message: 'Enter path of test reports:?',
-                           
-
-                                    string(defaultValue: 'None',
+			def USER_INPUT = input(
+                    	message: 'Ingrese la ruta?',
+                    	parameters: [
+                    		string(defaultValue: 'None',
                                             description: 'Path of config file',
-                                            name: 'Config'),)
-				
-			    inputConfig = Config?:''
-
+                                            name: 'Config'),
+			])
 
                 }
             }
