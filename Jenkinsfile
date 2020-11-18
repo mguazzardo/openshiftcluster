@@ -44,6 +44,7 @@ stage("Interactive_Input") {
 			])
 		//	salida=$(echo "${USER_INPUT}")
                     inputConfig = USER_INPUT
+		    echo "salida es $inputConfig"
 		}
 			
             }
