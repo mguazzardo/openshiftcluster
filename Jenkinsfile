@@ -63,7 +63,7 @@ stage("Interactive_Input") {
                     writeFile file: "inputData.txt", text: "Config=${inputConfig}\r\nTest=${inputTest}"
 
                     // Archive the file (or whatever you want to do with it)
-                    archiveArtifacts 'inputData.txt'
+                    //archiveArtifacts 'inputData.txt'
                 }
             }
         }
