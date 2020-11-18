@@ -34,7 +34,7 @@ pipeline {
 stage("Interactive_Input") {
             steps {
                 script {
-
+		def inputConfig
 		def userInput = input(
                             id: 'userInput', message: 'Enter path of test reports:?',
                             parameters: [
