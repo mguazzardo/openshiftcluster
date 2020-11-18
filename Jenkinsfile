@@ -42,7 +42,7 @@ stage("Interactive_Input") {
                                             description: 'Ruta del git',
                                             name: 'Config'),
 			])
-			echo "${USER_INPUT}"
+			salida=$(echo "${USER_INPUT}")
                 }
 			
             }
