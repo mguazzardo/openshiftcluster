@@ -42,7 +42,7 @@ stage("Interactive_Input") {
                                             description: 'Ruta del git',
                                             name: 'Config'),
 			])
-			echo "oc new-build ${USER_INPUT} --name 'prueba'"|sh
+			oc new-build "${USER_INPUT}" --name "prueba"
                 }
 			
             }
