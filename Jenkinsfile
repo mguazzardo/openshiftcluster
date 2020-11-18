@@ -42,9 +42,9 @@ stage("Interactive_Input") {
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config'),
-				     string(defaultValue: 'None',
-                                            description: 'Test Info file',
-                                            name: 'Test'),
+				     //string(defaultValue: 'None',
+                                     //       description: 'Test Info file',
+                                     //       name: 'Test'),
 					])
 			    inputConfig = userInput.Config?:''
 
