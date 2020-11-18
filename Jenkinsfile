@@ -36,29 +36,23 @@ stage("Interactive_Input") {
                 script {
 
                     // Variables for input
-                    def inputConfig
-                    def inputTest
+                    def inputGit
 
                     // Get the input
                     def userInput = input(
-                            id: 'userInput', message: 'Enter path of test reports:?',
+                            id: 'userInput', message: 'Ingrese la ruta del proyecto en Github :?',
                             parameters: [
 
                                     string(defaultValue: 'None',
-                                            description: 'Path of config file',
-                                            name: 'Config'),
-                                    string(defaultValue: 'None',
-                                            description: 'Test Info file',
-                                            name: 'Test'),
+                                            description: 'Ruta del proyecto ej. https://github.com/mguazzardo/s2i.git',
+                                            name: 'Git'),
                             ])
 
                     // Save to variables. Default to empty string if not found.
-                    inputConfig = userInput.Config?:''
-                    inputTest = userInput.Test?:''
+                    inputGit = userInput.Git?:''
 
                     // Echo to console
-                    echo("IQA Sheet Path: ${inputConfig}")
-                    echo("Test Info file path: ${inputTest}")
+                    echo("Ruta: ${inputGit}")
 
                     // Write to file
                     writeFile file: "inputData.txt", text: "Config=${inputConfig}\r\nTest=${inputTest}"
