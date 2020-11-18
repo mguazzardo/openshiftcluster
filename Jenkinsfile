@@ -46,9 +46,9 @@ stage("Interactive_Input") {
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config'),
-                                    string(defaultValue: 'None',
-                                            description: 'Test Info file',
-                                            name: 'Test'),
+                                    //string(defaultValue: 'None',
+                                    //        description: 'Test Info file',
+                                    //        name: 'Test'),
                             ])
 
                     // Save to variables. Default to empty string if not found.
@@ -57,7 +57,7 @@ stage("Interactive_Input") {
 
                     // Echo to console
                     echo("IQA Sheet Path: ${inputConfig}")
-                    echo("Test Info file path: ${inputTest}")
+                    //echo("Test Info file path: ${inputTest}")
 
                     // Write to file
                     writeFile file: "inputData.txt", text: "Config=${inputConfig}\r\nTest=${inputTest}"
