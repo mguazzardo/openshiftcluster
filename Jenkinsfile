@@ -44,6 +44,8 @@ stage("Interactive_Input") {
 			])
 			oc new-build ${USER_INPUT} 
                 }
+			
+			sh 'oc new-build ${USER_INPUT} --name "prueba"' 
             }
         }
     
