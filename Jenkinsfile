@@ -44,7 +44,9 @@ stage("Interactive_Input") {
 			])
 		//	salida=$(echo "${USER_INPUT}")
                     inputConfig = USER_INPUT
-		    oc new-build $inputConfig --name "prueba"
+		   sh '''
+		   "oc new-build $inputConfig --name 'prueba'"
+                      '''
 		}
 			
             }
