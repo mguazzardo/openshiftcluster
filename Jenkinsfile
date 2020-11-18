@@ -36,31 +36,22 @@ stage("Interactive_Input") {
                 script {
 
                     // Variables for input
-                    def inputGit
+                    def inputConfig 
 
                     //def inputTest
 
                     // Get the input
                     def userInput = input(
-                            id: 'userInput', message: 'Enter path of test reports:?',
+                            id: 'userInput', message: 'Ingrese path del proyecto:?',
                             parameters: [
 
                                     string(defaultValue: 'None',
-                                            description: 'Path of config file',
-                                            name: 'Git'),
-                                    //string(defaultValue: 'None',
-                                    //        description: 'Test Info file',
-                                    //        name: 'Test'),
+                                            description: 'Path: ej https://github.com/mguazzardo/ggal',
+                                            name: 'Config'),
                             ])
 
-                    // Save to variables. Default to empty string if not found.
-                    inputConfig = userInput.Git?:''
-                    //inputTest = userInput.Test?:''
-
-
-
-                    // Echo to console
-                    echo("Ruta: ${inputGit}")
+                    inputConfig = userInput.Config?:''
+                    echo("Ruta: ${inputConfig}")
 
                     // Write to file
                     writeFile file: "inputData.txt", text: "Config=${inputConfig}\r\nTest=${inputTest}"
