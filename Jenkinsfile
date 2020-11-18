@@ -38,18 +38,26 @@ stage("Interactive_Input") {
                     // Variables for input
                     def inputGit
 
+                    //def inputTest
+
                     // Get the input
                     def userInput = input(
-                            id: 'userInput', message: 'Ingrese la ruta del proyecto en Github :?',
+                            id: 'userInput', message: 'Enter path of test reports:?',
                             parameters: [
 
                                     string(defaultValue: 'None',
-                                            description: 'Ruta del proyecto ej. https://github.com/mguazzardo/s2i.git',
+                                            description: 'Path of config file',
                                             name: 'Git'),
+                                    //string(defaultValue: 'None',
+                                    //        description: 'Test Info file',
+                                    //        name: 'Test'),
                             ])
 
                     // Save to variables. Default to empty string if not found.
-                    inputGit = userInput.Git?:''
+                    inputConfig = userInput.Git?:''
+                    //inputTest = userInput.Test?:''
+
+
 
                     // Echo to console
                     echo("Ruta: ${inputGit}")
