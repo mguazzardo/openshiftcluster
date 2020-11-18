@@ -42,7 +42,7 @@ stage("Interactive_Input") {
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
                                             name: 'Config')
-					]
+					])
 			    inputConfig = userInput.Config?:''
 
 
