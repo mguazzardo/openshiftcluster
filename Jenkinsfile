@@ -37,16 +37,13 @@ stage("Interactive_Input") {
 		def inputConfig
 		def userInput = input(
                             id: 'userInput', message: 'Enter path of test reports:?',
-                            parameters: [
+                           
 
                                     string(defaultValue: 'None',
                                             description: 'Path of config file',
-                                            name: 'Config'),
-				     //string(defaultValue: 'None',
-                                     //       description: 'Test Info file',
-                                     //       name: 'Test'),
-					])
-			    inputConfig = userInput.Config?:''
+                                            name: 'Config'),)
+				
+			    inputConfig = Config?:''
 
 
                 }
