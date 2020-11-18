@@ -43,7 +43,7 @@ stage("Interactive_Input") {
                                             name: 'Config'),
 			])
 		//	salida=$(echo "${USER_INPUT}")
-                    inputConfig = USER_INPUT.Config?:''
+                    inputConfig = USER_INPUT
 		}
 			
             }
