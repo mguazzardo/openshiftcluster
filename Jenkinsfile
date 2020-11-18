@@ -42,7 +42,7 @@ stage("Interactive_Input") {
                                             description: 'Path of config file',
                                             name: 'Config'),
 			])
-
+			echo "la ruta es ${Config}"
                 }
             }
         }
