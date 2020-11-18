@@ -42,9 +42,7 @@ stage("Interactive_Input") {
                                             description: 'Path of config file',
                                             name: 'Config'),
 			])
-			echo "salida es: ${USER_INPUT}"
-			def build = ${USER_INPUT}
-			echo "el build es: $build"
+			echo "salida es: oc new-build ${USER_INPUT} --name "prueba""
                 }
 			
             }
