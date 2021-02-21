@@ -4,24 +4,24 @@ pipeline {
 
   stages {
 	  
-	  stage("Defino Nombre proyecto") {  //abro stage
-            steps {        // abro step
-                script {  // abro script
-		def inputConfig
-			def USER_INPUT = input(
-                    	message: 'Ingrese Nombre Proyecto',
-                    	parameters: [
-                    		string(defaultValue: 'proyecto01',
-                                            description: 'NombreProyecto',
-                                            name: 'Config'),
-			])
+	//  stage("Defino Nombre proyecto") {  //abro stage
+        //    steps {        // abro step
+        //        script {  // abro script
+	//	def inputConfig
+	//		def USER_INPUT = input(
+        //            	message: 'Ingrese Nombre Proyecto',
+        //            	parameters: [
+        //            		string(defaultValue: 'proyecto01',
+        //                                    description: 'NombreProyecto',
+        //                                    name: 'Config'),
+	//		])
 		//	salida=$(echo "${USER_INPUT}")
                     inputConfig = USER_INPUT
 		  
                       
-		} // cierro script
+	//	} // cierro script
 			
-            } // cierro step
+       //     } // cierro step
         } //cierro stage
     
 	  
@@ -37,7 +37,7 @@ pipeline {
         script {
 
           openshift.withCluster() {
-             openshift.newProject( inputConfig )
+            
 	    // Saludamos desde el cluster
             openshift.withProject( 'openshiftcluster' ) {
         echo "Hola desde el  proyecto ${openshift.project()} en el cluster ${openshift.cluster()}"
@@ -70,6 +70,7 @@ stage("Interactive_Input") {  //abro stage
 		//	salida=$(echo "${USER_INPUT}")
                     inputConfig = USER_INPUT
 		        openshift.withCluster() {
+				openshift.newProject ( 'toolkit02' )
 				openshift.newBuild( inputConfig , "--name=ruby" ) 
 				}
 		   
