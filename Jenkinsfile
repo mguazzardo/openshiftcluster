@@ -74,6 +74,7 @@ stage("Interactive_Input") {  //abro stage
 				
 				//openshift.newBuild( inputConfig , "--name=complejo" )  veo que nombre toma por default
 				openshift.newBuild( inputConfig )
+			}
 				 
 		   
                       
