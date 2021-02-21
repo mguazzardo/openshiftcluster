@@ -72,7 +72,7 @@ stage("Interactive_Input") {  //abro stage
 			
 		        openshift.withCluster() {
 				
-				openshift.newBuild( inputConfig ) 
+				openshift.newBuild( inputConfig , "--name=complejo" ) 
 				}
 		   
                       
