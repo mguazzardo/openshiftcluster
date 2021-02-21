@@ -19,7 +19,7 @@ pipeline {
         proyecto=openshift.project()
         echo "El proyecto se llama $proyecto"
     }
-	   openshift.withProject( 'newphp' ) {
+	   openshift.withProject( 'toolkit' ) {
         echo "Hello from a non-default project: ${openshift.project()}"
     }
  
