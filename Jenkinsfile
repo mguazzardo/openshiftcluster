@@ -22,7 +22,7 @@ pipeline {
 	//	} // cierro script
 			
        //     } // cierro step
-        } //cierro stage
+      //  } //cierro stage
     
 	  
 	  
