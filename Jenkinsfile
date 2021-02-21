@@ -16,7 +16,7 @@ pipeline {
         //                                    name: 'Config'),
 	//		])
 		//	salida=$(echo "${USER_INPUT}")
-                    inputConfig = USER_INPUT
+                 //   inputConfig = USER_INPUT
 		  
                       
 	//	} // cierro script
