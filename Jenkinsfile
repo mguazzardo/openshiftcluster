@@ -3,6 +3,31 @@ pipeline {
   agent any
 
   stages {
+	  
+	  stage("Defino Nombre proyecto") {  //abro stage
+            steps {        // abro step
+                script {  // abro script
+		def inputConfig
+			def USER_INPUT = input(
+                    	message: 'Ingrese Nombre Proyecto',
+                    	parameters: [
+                    		string(defaultValue: 'proyecto01',
+                                            description: 'NombreProyecto',
+                                            name: 'Config'),
+			])
+		//	salida=$(echo "${USER_INPUT}")
+                    inputConfig = USER_INPUT
+		  
+                      
+		} // cierro script
+			
+            } // cierro step
+        } //cierro stage
+    
+	  
+	  
+	  
+	  
 
     stage('Build') {
 
@@ -12,7 +37,7 @@ pipeline {
         script {
 
           openshift.withCluster() {
-
+             openshift.newProject( inputConfig )
 	    // Saludamos desde el cluster
             openshift.withProject( 'openshiftcluster' ) {
         echo "Hola desde el  proyecto ${openshift.project()} en el cluster ${openshift.cluster()}"
@@ -31,9 +56,9 @@ pipeline {
 
     }
 
-stage("Interactive_Input") {
-            steps {
-                script {
+stage("Interactive_Input") {  //abro stage
+            steps {        // abro step
+                script {  // abro script
 		def inputConfig
 			def USER_INPUT = input(
                     	message: 'Ingrese la ruta?',
@@ -49,10 +74,10 @@ stage("Interactive_Input") {
 				}
 		   
                       
-		}
+		} // cierro script
 			
-            }
-        }
+            } // cierro step
+        } //cierro stage
     
 
 
